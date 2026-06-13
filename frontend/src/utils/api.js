@@ -157,7 +157,7 @@ export const getErrorMessage = (error) => {
   return 'An unexpected error occurred. Please try again.';
 };
 
-export default {
+const apiClient = {
   fetchAPI,
   uploadFile,
   downloadFile,
@@ -165,3 +165,5 @@ export default {
   retryAPI,
   getErrorMessage,
 };
+
+export default apiClient;

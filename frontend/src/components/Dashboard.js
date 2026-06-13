@@ -5,10 +5,8 @@ import { fetchAPI } from '../utils/api';
 import '../styles/dashboard.css';
 
 function Dashboard() {
-  const { currentUser, stats, insights, actions, loadDashboardData } = useContext(AppContext);
+  const { currentUser, stats, insights, actions } = useContext(AppContext);
   const [monthlyData, setMonthlyData] = useState(null);
-  const [comparison, setComparison] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (currentUser) {
@@ -19,15 +17,11 @@ function Dashboard() {
   const loadDashboardStats = async () => {
     if (!currentUser) return;
     
-    setLoading(true);
     try {
       const statsData = await fetchAPI(`/api/stats/${currentUser.id}?days=30`, 'GET');
       setMonthlyData(statsData);
-      setComparison(statsData.comparison);
     } catch (error) {
       console.error('Failed to load dashboard stats:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

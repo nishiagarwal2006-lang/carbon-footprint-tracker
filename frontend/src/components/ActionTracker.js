@@ -4,7 +4,7 @@ import { fetchAPI } from '../utils/api';
 import '../styles/actions.css';
 
 function ActionTracker({ onAddAction }) {
-  const { currentUser, actions } = useContext(AppContext);
+  const { actions } = useContext(AppContext);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     action_name: '',

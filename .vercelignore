@@ -1,0 +1,12 @@
+backend/
+.env
+.git
+.github/
+node_modules/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+.DS_Store
+deploy.md
