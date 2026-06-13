@@ -1,0 +1,273 @@
+.action-tracker {
+  animation: fadeIn 0.5s ease;
+}
+
+.tracker-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.tracker-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.tracker-header p {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.add-action-btn {
+  margin-bottom: 24px;
+}
+
+.action-form {
+  max-width: 600px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.action-form h2 {
+  margin-bottom: 20px;
+}
+
+.action-form .form-group {
+  margin-bottom: 16px;
+}
+
+.quick-actions {
+  background: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.quick-actions p {
+  margin: 0 0 12px 0;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.quick-actions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.quick-action-btn {
+  padding: 8px 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.quick-action-btn:hover {
+  background: #1B5E20;
+  transform: translateY(-2px);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 10px;
+}
+
+.cancel-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.actions-section {
+  margin-bottom: 32px;
+}
+
+.actions-section h2 {
+  margin-bottom: 20px;
+}
+
+.actions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.action-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: all 200ms ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.action-card:hover {
+  box-shadow: 0 4px 16px var(--shadow);
+  transform: translateY(-2px);
+}
+
+.action-content {
+  flex: 1;
+}
+
+.action-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.action-title h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.action-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.action-stats .stat {
+  color: var(--text-light);
+}
+
+.action-progress {
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
+
+.action-progress p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.projection {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.action-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 150ms ease;
+}
+
+.log-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.log-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #da190b;
+  transform: scale(1.05);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  color: var(--text-light);
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+.tips-section {
+  margin-top: 48px;
+}
+
+.tips-section h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.tip-card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.tip-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tip-card li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .actions-list {
+    grid-template-columns: 1fr;
+  }
+
+  .action-card {
+    flex-direction: column;
+  }
+
+  .action-controls {
+    width: 100%;
+    flex-direction: row;
+  }
+}

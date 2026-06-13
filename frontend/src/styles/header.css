@@ -1,0 +1,161 @@
+.app-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 4px 12px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.logo p {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  opacity: 0.9;
+  color: white;
+}
+
+.main-nav {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 150ms ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid white;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.nav-label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-label {
+    display: inline;
+  }
+}
+
+.header-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.language-select {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.language-select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.language-select option {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.dark-mode-toggle {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 150ms ease;
+}
+
+.dark-mode-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.mobile-nav-indicator {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.8;
+  padding-top: 8px;
+}
+
+@media (min-width: 1024px) {
+  .mobile-nav-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .main-nav {
+    gap: 4px;
+  }
+
+  .nav-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .header-controls {
+    gap: 8px;
+  }
+}

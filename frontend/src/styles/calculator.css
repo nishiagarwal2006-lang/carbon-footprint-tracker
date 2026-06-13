@@ -1,0 +1,192 @@
+.calculator {
+  animation: fadeIn 0.5s ease;
+}
+
+.calc-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.calc-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.calc-header p {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.calculator-form {
+  max-width: 600px;
+  margin: 0 auto 32px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.form-section {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.transport-options,
+.diet-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.option-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.option-label input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.option-label:hover {
+  border-color: var(--primary);
+  background: rgba(46, 125, 50, 0.05);
+}
+
+.option-label input[type="radio"]:checked ~ .option-text {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.option-label input[type="radio"]:checked {
+  accent-color: var(--primary);
+}
+
+.option-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.emoji {
+  font-size: 24px;
+}
+
+.info-box {
+  background: rgba(33, 150, 243, 0.1);
+  border-left: 4px solid #2196f3;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.calc-info {
+  max-width: 900px;
+  margin: 48px auto 0;
+  padding: 32px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.calc-info h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.info-item h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.info-item p {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .calculator-form {
+    padding: 20px;
+  }
+
+  .transport-options,
+  .diet-options {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .calc-info {
+    padding: 20px;
+  }
+}

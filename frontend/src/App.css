@@ -1,0 +1,472 @@
+/* ============================================
+   Global Styles & Variables
+   ============================================ */
+
+:root {
+  /* Colors */
+  --primary: #2E7D32;
+  --primary-dark: #1B5E20;
+  --primary-light: #4CAF50;
+  --accent: #FF9800;
+  --accent-light: #FFB74D;
+  --danger: #F44336;
+  --warning: #FFC107;
+  --success: #4CAF50;
+  --info: #2196F3;
+  
+  /* Grays */
+  --bg-light: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --text-dark: #212121;
+  --text-light: #757575;
+  --border: #E0E0E0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Dark Mode */
+  --dark-bg: #1E1E1E;
+  --dark-bg-secondary: #2D2D2D;
+  --dark-text: #FFFFFF;
+  --dark-text-light: #B0B0B0;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Typography */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 28px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* ============================================
+   Dark Mode Variables
+   ============================================ */
+
+body.dark-mode {
+  --bg-light: var(--dark-bg);
+  --bg-secondary: var(--dark-bg-secondary);
+  --text-dark: var(--dark-text);
+  --text-light: var(--dark-text-light);
+  --border: #404040;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Reset & Base Styles
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal);
+}
+
+/* ============================================
+   App Container
+   ============================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app.light-mode {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+.app.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  min-height: 100vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-dark);
+}
+
+h1 { font-size: var(--font-size-2xl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
+h4 { font-size: var(--font-size-base); }
+
+p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-light);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.primary-btn,
+.submit-btn,
+.add-action-btn,
+.refresh-btn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.primary-btn:hover,
+.submit-btn:hover,
+.add-action-btn:hover,
+.refresh-btn:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.primary-btn:disabled,
+.submit-btn:disabled,
+.add-action-btn:disabled,
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancel-btn,
+.delete-btn {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border);
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.cancel-btn:hover,
+.delete-btn:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-dark);
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: border-color var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ============================================
+   Cards & Sections
+   ============================================ */
+
+.section {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+/* ============================================
+   Messages & Alerts
+   ============================================ */
+
+.success-message {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid var(--success);
+  border-radius: var(--radius-md);
+  color: var(--success);
+  margin-bottom: var(--spacing-lg);
+  animation: slideIn 0.3s ease;
+}
+
+.error-message {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  margin-bottom: var(--spacing-lg);
+}
+
+.info-box {
+  padding: var(--spacing-md);
+  background: rgba(33, 150, 243, 0.1);
+  border-left: 4px solid var(--info);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  font-size: var(--font-size-sm);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Badges
+   ============================================ */
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge.primary {
+  background: rgba(46, 125, 50, 0.2);
+  color: var(--primary-dark);
+}
+
+.badge.success {
+  background: rgba(76, 175, 80, 0.2);
+  color: var(--success);
+}
+
+.badge.warning {
+  background: rgba(255, 193, 7, 0.2);
+  color: var(--warning);
+}
+
+.badge.danger {
+  background: rgba(244, 67, 54, 0.2);
+  color: var(--danger);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-lg);
+  }
+
+  h1 { font-size: var(--font-size-xl); }
+  h2 { font-size: var(--font-size-lg); }
+
+  .section {
+    padding: var(--spacing-md);
+  }
+
+  .mobile-nav-indicator {
+    display: block;
+    padding: var(--spacing-md);
+    background: var(--warning);
+    color: var(--text-dark);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 16px;
+    --spacing-md: 12px;
+  }
+
+  .main-content {
+    padding: var(--spacing-md);
+  }
+
+  h1 { font-size: var(--font-size-lg); }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   Accessibility Features
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  button {
+    border: 2px solid currentColor;
+  }
+
+  .section {
+    border-width: 2px;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  .app-header,
+  .main-nav,
+  .header-controls,
+  .add-action-btn,
+  .refresh-btn,
+  .insights-actions {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section,
+  .card {
+    page-break-inside: avoid;
+    border: 1px solid black;
+    box-shadow: none;
+  }
+}
